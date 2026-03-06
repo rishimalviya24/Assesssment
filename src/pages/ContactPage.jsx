@@ -11,7 +11,7 @@ export default function ContactPage() {
             Interested in working with us?
           </div>
           <div className="text-[14px] sm:text-[18px] md:text-[20px] font-black tracking-[0.04em] text-white" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>
-            SAY HELLO@1085.STUDIO
+            SAY HELLO@Alpeniq.ch
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ export default function ContactPage() {
               <a key={l} href="#" className="text-[11px] font-bold tracking-[0.1em] text-white no-underline opacity-70 hover:opacity-100 transition-opacity" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>{l}</a>
             ))}
           </div>
-          <div className="text-[11px] text-white/30" style={{fontFamily:'Arial,sans-serif'}}>© 2026, 1085 STUDIO</div>
+          <div className="text-[11px] text-white/30" style={{fontFamily:'Arial,sans-serif'}}>© 2026, Alpeniq.ch</div>
         </div>
         <div className="text-right py-2">
           <button onClick={() => document.getElementById('hero')?.scrollIntoView({behavior:'smooth'})}

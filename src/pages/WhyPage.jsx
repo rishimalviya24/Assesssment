@@ -6,9 +6,9 @@ export default function WhyPage() {
   return (
     <section id="why" className="bg-black">
 
-      {/* ── WHY 1085 header ── */}
+      {/* ── WHY Alpeniq header ── */}
       <div className="flex justify-between items-start px-5 sm:px-7 pt-9 pb-7 border-b border-[#1a1a1a]">
-        <h2 className="text-[clamp(44px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white m-0">WHY 1085</h2>
+        <h2 className="text-[clamp(44px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white m-0">WHY Alpeniq</h2>
         <span className="text-[clamp(44px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white">S-1</span>
       </div>
 
@@ -18,7 +18,7 @@ export default function WhyPage() {
           <div className="mb-14">
             <h3 className="text-[17px] font-bold text-white mb-4" style={{fontFamily:'Arial,sans-serif'}}>One Partner</h3>
             <p className="text-[14.5px] leading-[1.82] text-white/80" style={{fontFamily:'Arial,sans-serif',fontWeight:400}}>
-              I am Alan, a Zurich-based informatics and design student, freelance creative technologist, and founder of 1085 Studio. I work at the intersection of brand, design, and technology, shaping digital identities through branding, UI/UX design, web development, and photography. My focus is on building clear, modern websites and visual systems that give brands direction, presence, and measurable impact — from first idea to final execution.
+              I am Alan, a Zurich-based informatics and design student, freelance creative technologist, and founder of Alpeniq.ch. I work at the intersection of brand, design, and technology, shaping digital identities through branding, UI/UX design, web development, and photography. My focus is on building clear, modern websites and visual systems that give brands direction, presence, and measurable impact — from first idea to final execution.
             </p>
           </div>
           <div className="mb-14">

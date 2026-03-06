@@ -196,20 +196,9 @@ export default function LiquidEther({
       onDocumentMouseMove(event) {
         if (!this.updateHoverState(event.clientX, event.clientY)) return;
         if (this.onInteract) this.onInteract();
-        if (this.isAutoActive && !this.hasUserControl && !this.takeoverActive) {
-          if (!this.container) return;
-          const rect = this.container.getBoundingClientRect();
-          if (rect.width === 0 || rect.height === 0) return;
-          const nx = (event.clientX - rect.left) / rect.width;
-          const ny = (event.clientY - rect.top) / rect.height;
-          this.takeoverFrom.copy(this.coords);
-          this.takeoverTo.set(nx * 2 - 1, -(ny * 2 - 1));
-          this.takeoverStartTime = performance.now();
-          this.takeoverActive = true;
-          this.hasUserControl = true;
-          this.isAutoActive = false;
-          return;
-        }
+        // Skip takeover — directly update coords for smooth no-glitch transition
+        this.takeoverActive = false;
+        this.isAutoActive = false;
         this.setCoords(event.clientX, event.clientY);
         this.hasUserControl = true;
       }
