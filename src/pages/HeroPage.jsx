@@ -1,61 +1,127 @@
 import { useState, useEffect } from 'react';
 import LiquidEther from '../components/LiquidEther';
 
-const nSVG = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='300' height='300' filter='url(#n)' opacity='0.15'/></svg>`;
-const NOISE = `data:image/svg+xml;base64,${btoa(nSVG)}`;
-
 export default function HeroPage() {
   const [time, setTime] = useState('');
+
   useEffect(() => {
     const tick = () => {
       const n = new Date();
-      setTime(`${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')} CET`);
+      setTime(
+        String(n.getHours()).padStart(2,'0') + ':' +
+        String(n.getMinutes()).padStart(2,'0') + ':' +
+        String(n.getSeconds()).padStart(2,'0') + ' CET'
+      );
     };
-    tick(); const iv = setInterval(tick, 1000); return () => clearInterval(iv);
+    tick();
+    const iv = setInterval(tick, 1000);
+    return () => clearInterval(iv);
   }, []);
+
   const goto = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="hero" className="relative h-screen overflow-hidden bg-[#0a0604]">
-      <LiquidEther colors={['#FF6420','#E63C0A','#FF2850','#0a0604']} mouseForce={22} cursorSize={120} resolution={0.5}
-        autoDemo={true} autoSpeed={0.45} autoIntensity={2.5} autoResumeDelay={800} autoRampDuration={0.8} BFECC={true} dt={0.014} />
-      <div className="absolute inset-0 pointer-events-none z-[5]"
-        style={{backgroundImage:`url("${NOISE}")`,backgroundRepeat:'repeat',backgroundSize:'300px',mixBlendMode:'overlay',opacity:.65}} />
+    <section id="hero" className="relative h-screen w-full overflow-hidden bg-black">
 
-      {/* Top */}
-      <div className="absolute top-0 left-0 right-0 z-10 flex justify-between px-4 sm:px-5 pt-4">
-        <span className="text-[#00e5ff] text-[10px] sm:text-[11px] font-bold tracking-[0.12em] font-mono">ZÜRICH, SWITZERLAND</span>
-        <span className="text-[#00e5ff] text-[10px] sm:text-[11px] font-bold tracking-[0.12em] font-mono">{time}</span>
-      </div>
+      {/* ── EXACT same LiquidEther as Alpeniq App.jsx — zero changes ── */}
+      <LiquidEther
+        colors={['#ffa927', '#FF9FFC', '#FF6B2B']}
+        mouseForce={60}
+        cursorSize={250}
+        isViscous={true}
+        viscous={20}
+        iterationsViscous={32}
+        iterationsPoisson={32}
+        resolution={0.5}
+        isBounce={false}
+        autoDemo={true}
+        autoSpeed={0.8}
+        autoIntensity={5.0}
+        takeoverDuration={0.25}
+        autoResumeDelay={1000}
+        autoRampDuration={0.4}
+      />
 
-      {/* Branding */}
-      <div className="absolute bottom-[42px] left-0 right-0 z-10 flex justify-between items-end px-4 sm:px-5 pb-4 sm:pb-5">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="w-[36px] h-[36px] sm:w-[42px] sm:h-[42px] border-[2.5px] border-white rounded-[5px] relative flex-shrink-0">
-            <div className="absolute bottom-[4px] left-[4px] sm:bottom-[5px] sm:left-[5px] w-[14px] h-[14px] sm:w-[17px] sm:h-[17px] bg-white rounded-[2px]" />
+      {/* ── UI Overlay — pointer-events-none so fluid stays interactive ── */}
+      <div className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between">
+
+        {/* Top: location + time */}
+        <div className="flex justify-between items-start px-5 sm:px-8 pt-5 sm:pt-6">
+          <span style={{
+            color: '#00e5ff',
+            fontFamily: "'Arial Black', Arial, sans-serif",
+            fontSize: 'clamp(11px, 1.1vw, 13px)',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase'
+          }}>
+            Zürich, Switzerland
+          </span>
+          <span style={{
+            color: '#00e5ff',
+            fontFamily: 'monospace',
+            fontSize: 'clamp(11px, 1.1vw, 13px)',
+            fontWeight: 700,
+            letterSpacing: '0.1em'
+          }}>
+            {time}
+          </span>
+        </div>
+
+        {/* Bottom: logo + tagline — sits above nav bar */}
+        <div className="flex justify-between items-end px-5 sm:px-8 pb-[54px] sm:pb-[60px]">
+
+          {/* 1085 Studio logo */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div style={{
+              width: 44, height: 44,
+              background: '#2a7de1',
+              borderRadius: 6,
+              flexShrink: 0,
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'flex-start',
+              padding: 5
+            }}>
+              <div style={{ width: 18, height: 18, background: '#fff', borderRadius: 2 }} />
+            </div>
+            <div style={{ lineHeight: 1.1 }}>
+              <div style={{ fontSize: 'clamp(20px, 2.2vw, 28px)', fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>1085</div>
+              <div style={{ fontSize: 'clamp(20px, 2.2vw, 28px)', fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>Studio</div>
+            </div>
           </div>
-          <div className="leading-[1.1]">
-            <div className="text-[20px] sm:text-[24px] font-black text-white">1085</div>
-            <div className="text-[20px] sm:text-[24px] font-black text-white">Studio</div>
+
+          {/* FULL-SERVICE CREATIVE STUDIO */}
+          <div className="text-right">
+            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "'Arial Black', Arial, sans-serif" }}>
+              FULL-SERVICE
+            </div>
+            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "'Arial Black', Arial, sans-serif" }}>
+              CREATIVE STUDIO
+            </div>
           </div>
         </div>
-        <div className="text-right">
-          <div className="text-[15px] sm:text-[20px] font-black tracking-[0.04em] text-white leading-[1.2]">FULL-SERVICE</div>
-          <div className="text-[15px] sm:text-[20px] font-black tracking-[0.04em] text-white leading-[1.2]">CREATIVE STUDIO</div>
-        </div>
       </div>
 
-      {/* Bottom nav */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-[#111] border-t border-[#222] flex justify-between items-center px-4 sm:px-5 h-[42px]">
-        <span className="text-[11px] sm:text-[12px] font-black tracking-[0.08em] text-white">1085.STUDIO</span>
-        <div className="flex gap-4 sm:gap-8 items-center">
-          {[['WEB','specialization'],['DESIGN','examples'],['PHOTO','examples'],['CONTACT','contact']].map(([lbl,id]) => (
+      {/* ── Bottom nav bar — pointer-events-auto so buttons work ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-20 pointer-events-auto flex justify-between items-center px-4 sm:px-5"
+        style={{ background: '#111', borderTop: '1px solid #222', height: 'clamp(40px, 4vh, 46px)' }}
+      >
+        <span style={{ fontSize: 'clamp(11px,1vw,13px)', fontWeight: 900, letterSpacing: '0.08em', color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>
+          1085.STUDIO
+        </span>
+        <div className="flex items-center" style={{ gap: 'clamp(16px, 3vw, 32px)' }}>
+          {[['WEB','specialization'],['DESIGN','examples'],['PHOTO','examples'],['CONTACT','contact']].map(([lbl, id]) => (
             <button key={lbl} onClick={() => goto(id)}
-              className="text-[10px] sm:text-[12px] font-bold tracking-[0.1em] text-white bg-transparent border-0 cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+              style={{ fontSize: 'clamp(10px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.1em', color: '#fff', background: 'none', border: 'none', cursor: 'pointer', opacity: 0.7, transition: 'opacity 0.2s', fontFamily: "'Arial Black', Arial, sans-serif" }}
+              onMouseEnter={e => e.currentTarget.style.opacity = '1'}
+              onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}
+            >
               {lbl}
             </button>
           ))}
-          <div className="w-[6px] h-[6px] sm:w-[7px] sm:h-[7px] rounded-full bg-white" />
+          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#fff', flexShrink: 0 }} />
         </div>
       </div>
     </section>
