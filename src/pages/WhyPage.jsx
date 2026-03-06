@@ -16,18 +16,18 @@ export default function WhyPage() {
       <div className="flex justify-end px-5 sm:px-7 pt-14 pb-0">
         <div className="w-full max-w-[540px]">
           <div className="mb-14">
-            <h3 className="text-[17px] font-bold text-white mb-4" style={{fontFamily:'Arial,sans-serif'}}>One Partner</h3>
-            <p className="text-[14.5px] leading-[1.82] text-white/80" style={{fontFamily:'Arial,sans-serif',fontWeight:400}}>
-              I am Alan, a Zurich-based informatics and design student, freelance creative technologist, and founder of Alpeniq.ch. I work at the intersection of brand, design, and technology, shaping digital identities through branding, UI/UX design, web development, and photography. My focus is on building clear, modern websites and visual systems that give brands direction, presence, and measurable impact — from first idea to final execution.
+            <h3 className="text-[30px] font-semibold text-white mb-4" style={{fontFamily:'Switzer,sans-serif'}}>One Partner</h3>
+            <p className="text-[14px] leading-[1.82] text-white/80" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
+              I am Alan, a Zurich-based informatics and design student, freelance creative technologist, and founder of Alpeniq. I work at the intersection of brand, design, and technology, shaping digital identities through branding, UI/UX design, web development, and photography. My focus is on building clear, modern websites and visual systems that give brands direction, presence, and measurable impact — from first idea to final execution.
             </p>
           </div>
           <div className="mb-14">
-            <h3 className="text-[17px] font-bold text-white mb-4" style={{fontFamily:'Arial,sans-serif'}}>One Vision</h3>
-            <p className="text-[14.5px] leading-[1.82] text-white/80" style={{fontFamily:'Arial,sans-serif',fontWeight:400}}>
+            <h3 className="text-[30px] font-semibold text-white mb-4" style={{fontFamily:'Switzer,sans-serif'}}>One Vision</h3>
+            <p className="text-[14px] leading-[1.82] text-white/80" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
               Strong work starts with a clear point of view. I set a single, guiding vision and lead projects with a decisive creative and technical direction. By connecting strategy, design, development, and AI-supported workflows, I create cohesive digital experiences that feel intentional, perform reliably, and remain relevant across platforms, products, and evolving technologies.
             </p>
           </div>
-          <h3 className="text-[17px] font-bold text-white mb-9" style={{fontFamily:'Arial,sans-serif'}}>Brands that trust me</h3>
+          <h3 className="text-[30px] font-semibold text-white mb-9" style={{fontFamily:'Switzer,sans-serif'}}>Brands that trust me</h3>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ export default function WhyPage() {
           </span>
         </div>
 
-        <p className="text-[14.5px] leading-[1.75] text-white/80 max-w-[460px] mb-16" style={{fontFamily:'Arial,sans-serif',fontWeight:400}}>
+        <p className="text-[14px] leading-[1.75] text-white/80 max-w-[460px] mb-16" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
           Zero isn't empty, it's potential. I design with zero compromise and zero noise: sharp identities, fast websites, and content that moves people and metrics.
         </p>
 
@@ -58,14 +58,14 @@ export default function WhyPage() {
               <div className="font-black text-white leading-none mb-2.5 text-[clamp(32px,4.5vw,58px)] tracking-[-0.02em]">
                 <CountUp end={s.end} suffix={s.suffix} duration={2200} />
               </div>
-              <div className="text-[13px] text-white/70 leading-[1.5] whitespace-pre-line" style={{fontFamily:'Arial,sans-serif',fontWeight:400}}>
+              <div className="text-[13px] text-white/70 leading-[1.5] whitespace-pre-line" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
                 {s.l}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-[11px] text-white/30 leading-[1.6]" style={{fontFamily:'Arial,sans-serif'}}>
+        <div className="text-[11px] text-white/30 leading-[1.6]" style={{fontFamily:'Switzer,sans-serif'}}>
           Selected metrics.<br />Last updated: Aug 2025.
         </div>
       </div>

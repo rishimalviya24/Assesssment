@@ -49,7 +49,7 @@ export default function HeroPage() {
         <div className="flex justify-between items-start px-5 sm:px-8 pt-5 sm:pt-6">
           <span style={{
             color: '#00e5ff',
-            fontFamily: "'Arial Black', Arial, sans-serif",
+            fontFamily: "Switzer, sans-serif",
             fontSize: 'clamp(11px, 1.1vw, 13px)',
             fontWeight: 700,
             letterSpacing: '0.12em',
@@ -71,7 +71,7 @@ export default function HeroPage() {
         {/* Bottom: logo + tagline — sits above nav bar */}
         <div className="flex justify-between items-end px-5 sm:px-8 pb-[54px] sm:pb-[60px]">
 
-          {/* Alpeniq.ch logo */}
+          {/* Alpeniq logo */}
           <div className="flex items-center gap-2 sm:gap-3">
             <div style={{
               width: 44, height: 44,
@@ -86,17 +86,16 @@ export default function HeroPage() {
               <div style={{ width: 18, height: 18, background: '#fff', borderRadius: 2 }} />
             </div>
             <div style={{ lineHeight: 1.1 }}>
-              <div style={{ fontSize: 'clamp(20px, 2.2vw, 28px)', fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>Alpeniq</div>
-              <div style={{ fontSize: 'clamp(20px, 2.2vw, 28px)', fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>.ch</div>
+              <div style={{ fontSize: 'clamp(20px, 2.2vw, 28px)', fontWeight: 900, color: '#fff', fontFamily: "Switzer, sans-serif" }}>Alpeniq</div>
             </div>
           </div>
 
           {/* FULL-SERVICE CREATIVE STUDIO */}
           <div className="text-right">
-            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "'Arial Black', Arial, sans-serif" }}>
+            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "Switzer, sans-serif" }}>
               FULL-SERVICE
             </div>
-            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "'Arial Black', Arial, sans-serif" }}>
+            <div style={{ fontSize: 'clamp(16px, 2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2, fontFamily: "Switzer, sans-serif" }}>
               CREATIVE STUDIO
             </div>
           </div>
@@ -108,13 +107,13 @@ export default function HeroPage() {
         className="absolute bottom-0 left-0 right-0 z-20 pointer-events-auto flex justify-between items-center px-4 sm:px-5"
         style={{ background: '#111', borderTop: '1px solid #222', height: 'clamp(40px, 4vh, 46px)' }}
       >
-        <span style={{ fontSize: 'clamp(11px,1vw,13px)', fontWeight: 900, letterSpacing: '0.08em', color: '#fff', fontFamily: "'Arial Black', Arial, sans-serif" }}>
-          Alpeniq.ch
+        <span style={{ fontSize: 'clamp(11px,1vw,13px)', fontWeight: 900, letterSpacing: '0.08em', color: '#fff', fontFamily: "Switzer, sans-serif" }}>
+          Alpeniq
         </span>
         <div className="flex items-center" style={{ gap: 'clamp(16px, 3vw, 32px)' }}>
           {[['WEB','specialization'],['DESIGN','examples'],['PHOTO','examples'],['CONTACT','contact']].map(([lbl, id]) => (
             <button key={lbl} onClick={() => goto(id)}
-              style={{ fontSize: 'clamp(10px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.1em', color: '#fff', background: 'none', border: 'none', cursor: 'pointer', opacity: 0.7, transition: 'opacity 0.2s', fontFamily: "'Arial Black', Arial, sans-serif" }}
+              style={{ fontSize: 'clamp(10px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.1em', color: '#fff', background: 'none', border: 'none', cursor: 'pointer', opacity: 0.7, transition: 'opacity 0.2s', fontFamily: "Switzer, sans-serif" }}
               onMouseEnter={e => e.currentTarget.style.opacity = '1'}
               onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}
             >

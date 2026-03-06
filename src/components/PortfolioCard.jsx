@@ -5,7 +5,7 @@ export default function PortfolioCard({ item }) {
     <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
       <div className="flex justify-between items-center py-3">
         <span className="text-[10px] font-bold tracking-[0.14em] text-white/55">{item.cat}</span>
-        <span className="text-[10px] text-white/40" style={{fontFamily:'Arial,sans-serif'}}>{item.year}</span>
+        <span className="text-[10px] text-white/40" style={{fontFamily:'Switzer,sans-serif'}}>{item.year}</span>
       </div>
       <div className="w-full relative overflow-hidden bg-[#111]" style={{paddingBottom:'76%'}}>
         <img src={item.img} alt={item.title} loading="lazy"

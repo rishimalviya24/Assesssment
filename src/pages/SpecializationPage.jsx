@@ -10,7 +10,7 @@ export default function SpecializationPage() {
         <h2 className="text-[clamp(24px,5.2vw,68px)] font-black tracking-[-0.02em] leading-none text-white m-0">SPECIALIZATION</h2>
         <span className="text-[clamp(24px,5.2vw,68px)] font-black tracking-[-0.02em] leading-none text-white">S-5</span>
       </div>
-      <p className="text-[13px] sm:text-[14px] text-white/50 px-5 sm:px-7 mt-6 mb-10 sm:mb-12" style={{fontFamily:'Arial,sans-serif'}}>
+      <p className="text-[14px] text-white/50 px-5 sm:px-7 mt-6 mb-10 sm:mb-12" style={{fontFamily:'Switzer,sans-serif'}}>
         My expertise spans five pillars, each designed to move ideas into impact.
       </p>
       <div className="px-5 sm:px-7 border-t border-[#222]">

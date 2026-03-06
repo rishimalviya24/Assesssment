@@ -7,11 +7,11 @@ export default function ContactPage() {
         <div className="absolute inset-0 pointer-events-none"
           style={{background:'linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 40%,transparent 100%)'}} />
         <div className="absolute bottom-0 left-0 z-10" style={{padding:'clamp(24px,4vw,72px)'}}>
-          <div className="text-[11px] sm:text-[13px] font-bold tracking-[0.12em] text-white/60 uppercase mb-3" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>
+          <div className="text-[11px] sm:text-[13px] font-bold tracking-[0.12em] text-white/60 uppercase mb-3" style={{fontFamily:'Switzer,sans-serif'}}>
             Interested in working with us?
           </div>
-          <div className="text-[14px] sm:text-[18px] md:text-[20px] font-black tracking-[0.04em] text-white" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>
-            SAY HELLO@Alpeniq.ch
+          <div className="text-[14px] sm:text-[18px] md:text-[20px] font-black tracking-[0.04em] text-white" style={{fontFamily:'Switzer,sans-serif'}}>
+            SAY HELLO@ALPENIQ
           </div>
         </div>
       </div>
@@ -19,19 +19,19 @@ export default function ContactPage() {
         <div className="py-2">
           <div className="flex gap-4 mb-1">
             {['INSTAGRAM','EMAIL'].map(l => (
-              <a key={l} href="#" className="text-[11px] font-bold tracking-[0.1em] text-white no-underline opacity-70 hover:opacity-100 transition-opacity" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>{l}</a>
+              <a key={l} href="#" className="text-[11px] font-bold tracking-[0.1em] text-white no-underline opacity-70 hover:opacity-100 transition-opacity" style={{fontFamily:'Switzer,sans-serif'}}>{l}</a>
             ))}
           </div>
-          <div className="text-[11px] text-white/30" style={{fontFamily:'Arial,sans-serif'}}>© 2026, Alpeniq.ch</div>
+          <div className="text-[11px] text-white/30" style={{fontFamily:'Switzer,sans-serif'}}>© 2026, Alpeniq</div>
         </div>
         <div className="text-right py-2">
           <button onClick={() => document.getElementById('hero')?.scrollIntoView({behavior:'smooth'})}
-            className="bg-transparent border-0 cursor-pointer text-white text-[11px] font-bold tracking-[0.1em] p-0 flex items-center gap-1.5 ml-auto mb-1 opacity-80 hover:opacity-100 transition-opacity" style={{fontFamily:'"Arial Black",Arial,sans-serif'}}>
+            className="bg-transparent border-0 cursor-pointer text-white text-[11px] font-bold tracking-[0.1em] p-0 flex items-center gap-1.5 ml-auto mb-1 opacity-80 hover:opacity-100 transition-opacity" style={{fontFamily:'Switzer,sans-serif'}}>
             BACK TO TOP ∧
           </button>
           <div className="flex gap-4 justify-end">
             {['COOKIES','IMPRINT & PRIVACY'].map(l => (
-              <a key={l} href="#" className="text-[11px] text-white/40 no-underline hover:text-white transition-colors" style={{fontFamily:'Arial,sans-serif'}}>{l}</a>
+              <a key={l} href="#" className="text-[11px] text-white/40 no-underline hover:text-white transition-colors" style={{fontFamily:'Switzer,sans-serif'}}>{l}</a>
             ))}
           </div>
         </div>

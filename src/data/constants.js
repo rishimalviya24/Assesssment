@@ -7,7 +7,7 @@ export const PORTFOLIO = [
   { cat:"EVENT PHOTOGRAPHY", year:"2025", title:"KHELANI CRASH TOUR",   img:`${BASE}kehlani-crash-tour-event-photography-2025.webp` },
   { cat:"IDENTITY",          year:"2024", title:"BAYTEC SOLUTIONS AG",  img:`${BASE}baytec-solutions-brand-identity-2024.webp` },
   { cat:"SOCIAL MEDIA",      year:"2024", title:"ARISO",                img:`${BASE}ariso-restaurant-social-media-2024.webp` },
-  { cat:"ADVERTISING",       year:"2024", title:"Alpeniq.ch",          img:`${BASE}1085-studio-advertising-campaign-2024.webp` },
+  { cat:"ADVERTISING",       year:"2024", title:"Alpeniq",          img:`${BASE}1085-studio-advertising-campaign-2024.webp` },
   { cat:"LOGO & BRANDING",   year:"2024", title:"DA PEPINO",            img:`${BASE}da-pepino-logo-branding-2024.webp` },
   { cat:"WEB DEVELOPMENT",   year:"2025", title:"SANIVIS AG",           img:`${BASE}sanivis-web-development-2025.webp` },
 ];

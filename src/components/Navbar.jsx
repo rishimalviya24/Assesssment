@@ -4,7 +4,7 @@ export default function Navbar({ showNav, active }) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center h-[42px] px-4 sm:px-5 bg-[#111] border-b border-[#222]"
       style={{ transform: showNav ? 'translateY(0)' : 'translateY(-100%)', transition: 'transform .35s cubic-bezier(.4,0,.2,1)', pointerEvents: showNav ? 'auto' : 'none' }}>
-      <button onClick={() => goto('hero')} className="text-[12px] font-black tracking-[0.08em] text-white bg-transparent border-0 cursor-pointer">Alpeniq.ch</button>
+      <button onClick={() => goto('hero')} className="text-[12px] font-black tracking-[0.08em] text-white bg-transparent border-0 cursor-pointer">Alpeniq</button>
       <div className="flex gap-5 sm:gap-8 items-center">
         {links.map(([lbl, id]) => (
           <button key={lbl} onClick={() => goto(id)}
