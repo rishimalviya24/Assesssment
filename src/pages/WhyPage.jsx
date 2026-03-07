@@ -4,72 +4,80 @@ import { STATS } from '../data/constants';
 
 export default function WhyPage() {
   return (
-    <section id="why" className="bg-black">
+    <section id="why" style={{ background:'#000' }}>
 
-      {/* ── WHY Alpeniq header ── */}
-      <div className="flex justify-between items-start px-5 sm:px-7 pt-9 pb-7 border-b border-[#1a1a1a]">
-        <h2 className="text-[clamp(44px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white m-0">WHY Alpeniq</h2>
-        <span className="text-[clamp(44px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white">S-1</span>
+      {/* ── Header row ── */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', padding:'36px 28px 28px', borderBottom:'1px solid #1a1a1a' }}>
+        <h2 style={{ fontSize:'clamp(40px,7vw,84px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', margin:0, fontFamily:'Switzer,sans-serif' }}>
+          Why Alpeniq
+        </h2>
+        <span style={{ fontSize:'clamp(40px,7vw,84px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', fontFamily:'Switzer,sans-serif', flexShrink:0 }}>
+          S-1
+        </span>
       </div>
 
-      {/* ── Right-side text blocks ── */}
-      <div className="flex justify-end px-5 sm:px-7 pt-14 pb-0">
-        <div className="w-full max-w-[540px]">
-          <div className="mb-14">
-            <h3 className="text-[30px] font-semibold text-white mb-4" style={{fontFamily:'Switzer,sans-serif'}}>One Partner</h3>
-            <p className="text-[14px] leading-[1.82] text-white/80" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
+      {/* ── Right-aligned text blocks ── */}
+      <div style={{ display:'flex', justifyContent:'flex-end', padding:'56px 28px 0' }}>
+        <div style={{ width:'100%', maxWidth:540 }}>
+          <div style={{ marginBottom:52 }}>
+            <h3 style={{ fontSize:'clamp(18px,1.8vw,24px)', fontWeight:600, color:'#fff', marginBottom:16, fontFamily:'Switzer,sans-serif' }}>
+              One Partner
+            </h3>
+            <p style={{ fontSize:14, lineHeight:1.82, color:'rgba(255,255,255,0.8)', margin:0, fontFamily:'Switzer,sans-serif', fontWeight:400 }}>
               I am Alan, a Zurich-based informatics and design student, freelance creative technologist, and founder of Alpeniq. I work at the intersection of brand, design, and technology, shaping digital identities through branding, UI/UX design, web development, and photography. My focus is on building clear, modern websites and visual systems that give brands direction, presence, and measurable impact — from first idea to final execution.
             </p>
           </div>
-          <div className="mb-14">
-            <h3 className="text-[30px] font-semibold text-white mb-4" style={{fontFamily:'Switzer,sans-serif'}}>One Vision</h3>
-            <p className="text-[14px] leading-[1.82] text-white/80" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
+          <div style={{ marginBottom:52 }}>
+            <h3 style={{ fontSize:'clamp(18px,1.8vw,24px)', fontWeight:600, color:'#fff', marginBottom:16, fontFamily:'Switzer,sans-serif' }}>
+              One Vision
+            </h3>
+            <p style={{ fontSize:14, lineHeight:1.82, color:'rgba(255,255,255,0.8)', margin:0, fontFamily:'Switzer,sans-serif', fontWeight:400 }}>
               Strong work starts with a clear point of view. I set a single, guiding vision and lead projects with a decisive creative and technical direction. By connecting strategy, design, development, and AI-supported workflows, I create cohesive digital experiences that feel intentional, perform reliably, and remain relevant across platforms, products, and evolving technologies.
             </p>
           </div>
-          <h3 className="text-[30px] font-semibold text-white mb-9" style={{fontFamily:'Switzer,sans-serif'}}>Brands that trust me</h3>
+          <h3 style={{ fontSize:'clamp(18px,1.8vw,24px)', fontWeight:600, color:'#fff', marginBottom:36, fontFamily:'Switzer,sans-serif' }}>
+            Brands that trust me
+          </h3>
         </div>
       </div>
 
       {/* ── Brand Marquee ── */}
       <BrandMarquee />
 
-      {/* ── NO BOUNDARIES section — full viewport height ── */}
-      <div className="bg-black min-h-screen flex flex-col justify-end px-5 sm:px-7 pt-14 pb-16 sm:pb-20">
+      {/* ── NO BOUNDARIES — full viewport height ── */}
+      <div style={{ background:'#000', minHeight:'100svh', display:'flex', flexDirection:'column', justifyContent:'flex-end', padding:'56px 28px 72px' }}>
 
-        {/* ✅ NO BOUNDARIES + S-0 on THE SAME LINE — flex justify-between */}
-        <div className="flex justify-between items-baseline mb-6">
-          <h2 className="font-black leading-none text-white m-0 text-[clamp(28px,4.8vw,64px)] tracking-[-0.01em]">
-            NO BOUNDARIES
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:24, flexWrap:'wrap', gap:8 }}>
+          <h2 style={{ fontSize:'clamp(28px,5vw,68px)', fontWeight:900, letterSpacing:'-0.01em', lineHeight:1, color:'#fff', margin:0, fontFamily:'Switzer,sans-serif' }}>
+            No Boundaries
           </h2>
-          <span className="font-black leading-none text-white text-[clamp(28px,4.8vw,64px)] tracking-[-0.02em] flex-shrink-0 ml-4">
+          <span style={{ fontSize:'clamp(28px,5vw,68px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', fontFamily:'Switzer,sans-serif', flexShrink:0 }}>
             S-0
           </span>
         </div>
 
-        <p className="text-[14px] leading-[1.75] text-white/80 max-w-[460px] mb-16" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
+        <p style={{ fontSize:14, lineHeight:1.75, color:'rgba(255,255,255,0.8)', maxWidth:460, marginBottom:56, fontFamily:'Switzer,sans-serif', fontWeight:400 }}>
           Zero isn't empty, it's potential. I design with zero compromise and zero noise: sharp identities, fast websites, and content that moves people and metrics.
         </p>
 
         {/* Stats grid */}
-        <div className="stats-grid">
-          {STATS.map((s, i) => (
+        <div className="stats-grid" style={{ marginBottom:40 }}>
+          {STATS.map((s,i) => (
             <div key={i}>
-              <div className="font-black text-white leading-none mb-2.5 text-[clamp(32px,4.5vw,58px)] tracking-[-0.02em]">
+              <div style={{ fontSize:'clamp(32px,4.5vw,58px)', fontWeight:900, color:'#fff', lineHeight:1, marginBottom:10, letterSpacing:'-0.02em', fontFamily:'Switzer,sans-serif' }}>
                 <CountUp end={s.end} suffix={s.suffix} duration={2200} />
               </div>
-              <div className="text-[13px] text-white/70 leading-[1.5] whitespace-pre-line" style={{fontFamily:'Switzer,sans-serif',fontWeight:400}}>
+              <div style={{ fontSize:13, color:'rgba(255,255,255,0.7)', lineHeight:1.5, whiteSpace:'pre-line', fontFamily:'Switzer,sans-serif', fontWeight:400 }}>
                 {s.l}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-[11px] text-white/30 leading-[1.6]" style={{fontFamily:'Switzer,sans-serif'}}>
+        <div style={{ fontSize:11, color:'rgba(255,255,255,0.3)', lineHeight:1.6, fontFamily:'Switzer,sans-serif' }}>
           Selected metrics.<br />Last updated: Aug 2025.
         </div>
       </div>
-
     </section>
   );
 }

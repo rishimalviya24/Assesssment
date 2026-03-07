@@ -5,17 +5,30 @@ import { SPECS } from '../data/constants';
 export default function SpecializationPage() {
   const [open, setOpen] = useState(null);
   return (
-    <section id="specialization" className="bg-black">
-      <div className="flex justify-between items-start px-5 sm:px-7 pt-9 pb-6 border-b border-[#1a1a1a]">
-        <h2 className="text-[clamp(24px,5.2vw,68px)] font-black tracking-[-0.02em] leading-none text-white m-0">SPECIALIZATION</h2>
-        <span className="text-[clamp(24px,5.2vw,68px)] font-black tracking-[-0.02em] leading-none text-white">S-5</span>
+    <section id="specialization" style={{ background:'#000' }}>
+
+      {/* Header */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', padding:'36px 28px 24px', borderBottom:'1px solid #1a1a1a' }}>
+        <h2 style={{ fontSize:'clamp(22px,5.2vw,68px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', margin:0, fontFamily:'Switzer,sans-serif' }}>
+          Specialization
+        </h2>
+        <span style={{ fontSize:'clamp(22px,5.2vw,68px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', fontFamily:'Switzer,sans-serif', flexShrink:0 }}>
+          S-5
+        </span>
       </div>
-      <p className="text-[14px] text-white/50 px-5 sm:px-7 mt-6 mb-10 sm:mb-12" style={{fontFamily:'Switzer,sans-serif'}}>
+
+      <p style={{ fontSize:14, color:'rgba(255,255,255,0.5)', padding:'24px 28px', margin:0, fontFamily:'Switzer,sans-serif' }}>
         My expertise spans five pillars, each designed to move ideas into impact.
       </p>
-      <div className="px-5 sm:px-7 border-t border-[#222]">
+
+      <div style={{ padding:'0 28px', borderTop:'1px solid #222' }}>
         {SPECS.map((item, i) => (
-          <AccordionItem key={i} item={item} isOpen={open === i} onToggle={() => setOpen(p => p === i ? null : i)} />
+          <AccordionItem
+            key={i}
+            item={item}
+            isOpen={open === i}
+            onToggle={() => setOpen(p => p === i ? null : i)}
+          />
         ))}
       </div>
     </section>

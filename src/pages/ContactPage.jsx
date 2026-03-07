@@ -1,37 +1,67 @@
 export default function ContactPage() {
   return (
-    <section id="contact" className="bg-black flex flex-col">
-      <div className="relative w-full h-screen overflow-hidden">
-        <img src="https://1085.studio/assets/images/1085-studio-contact-background-960.webp" alt="Contact"
-          className="absolute inset-0 w-full h-full object-cover object-center block" />
-        <div className="absolute inset-0 pointer-events-none"
-          style={{background:'linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 40%,transparent 100%)'}} />
-        <div className="absolute bottom-0 left-0 z-10" style={{padding:'clamp(24px,4vw,72px)'}}>
-          <div className="text-[11px] sm:text-[13px] font-bold tracking-[0.12em] text-white/60 uppercase mb-3" style={{fontFamily:'Switzer,sans-serif'}}>
+    <section id="contact" style={{ background:'#000', display:'flex', flexDirection:'column' }}>
+
+      {/* Full viewport contact image */}
+      <div style={{ position:'relative', width:'100%', height:'100svh', overflow:'hidden' }}>
+        <img
+          src="https://1085.studio/assets/images/1085-studio-contact-background-960.webp"
+          alt="Contact"
+          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', objectPosition:'center', display:'block' }}
+        />
+        {/* Gradient overlay */}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 45%, transparent 100%)', pointerEvents:'none' }} />
+
+        {/* CTA bottom-left */}
+        <div style={{ position:'absolute', bottom:0, left:0, zIndex:10, padding:'clamp(24px,4vw,64px)' }}>
+          <div style={{ fontSize:'clamp(10px,1vw,12px)', fontWeight:700, letterSpacing:'0.14em', color:'rgba(255,255,255,0.6)', textTransform:'uppercase', marginBottom:12, fontFamily:'Switzer,sans-serif' }}>
             Interested in working with us?
           </div>
-          <div className="text-[14px] sm:text-[18px] md:text-[20px] font-black tracking-[0.04em] text-white" style={{fontFamily:'Switzer,sans-serif'}}>
-            SAY HELLO@ALPENIQ
-          </div>
+          <a href="mailto:hello@alpeniq.ch"
+            style={{ fontSize:'clamp(14px,2vw,22px)', fontWeight:900, letterSpacing:'0.04em', color:'#fff', fontFamily:'Switzer,sans-serif', textDecoration:'none', display:'block', transition:'opacity 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.opacity='0.8'}
+            onMouseLeave={e => e.currentTarget.style.opacity='1'}>
+            SAY HELLO@ALPENIQ.CH
+          </a>
         </div>
       </div>
-      <footer className="bg-[#0a0604] border-t border-[#1a1a1a] flex justify-between items-center px-4 sm:px-5 min-h-[60px] flex-wrap gap-2.5 py-2">
-        <div className="py-2">
-          <div className="flex gap-4 mb-1">
-            {['INSTAGRAM','EMAIL'].map(l => (
-              <a key={l} href="#" className="text-[11px] font-bold tracking-[0.1em] text-white no-underline opacity-70 hover:opacity-100 transition-opacity" style={{fontFamily:'Switzer,sans-serif'}}>{l}</a>
+
+      {/* Footer */}
+      <footer style={{ background:'#0a0604', borderTop:'1px solid #1a1a1a', display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 20px', minHeight:60, flexWrap:'wrap', gap:12 }}>
+        {/* Left: social + copyright */}
+        <div>
+          <div style={{ display:'flex', gap:20, marginBottom:6 }}>
+            {[['Instagram','https://instagram.com/alpeniq'],['Email','mailto:hello@alpeniq.ch']].map(([lbl,href]) => (
+              <a key={lbl} href={href}
+                style={{ fontSize:11, fontWeight:700, letterSpacing:'0.1em', color:'#fff', textDecoration:'none', opacity:0.7, fontFamily:'Switzer,sans-serif', transition:'opacity 0.2s', textTransform:'uppercase' }}
+                onMouseEnter={e => e.currentTarget.style.opacity='1'}
+                onMouseLeave={e => e.currentTarget.style.opacity='0.7'}>
+                {lbl}
+              </a>
             ))}
           </div>
-          <div className="text-[11px] text-white/30" style={{fontFamily:'Switzer,sans-serif'}}>© 2026, Alpeniq</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.3)', fontFamily:'Switzer,sans-serif' }}>
+            © 2026, Alpeniq
+          </div>
         </div>
-        <div className="text-right py-2">
-          <button onClick={() => document.getElementById('hero')?.scrollIntoView({behavior:'smooth'})}
-            className="bg-transparent border-0 cursor-pointer text-white text-[11px] font-bold tracking-[0.1em] p-0 flex items-center gap-1.5 ml-auto mb-1 opacity-80 hover:opacity-100 transition-opacity" style={{fontFamily:'Switzer,sans-serif'}}>
+
+        {/* Right: back to top + legal */}
+        <div style={{ textAlign:'right' }}>
+          <button
+            onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior:'smooth' })}
+            style={{ background:'none', border:'none', cursor:'pointer', color:'#fff', fontSize:11, fontWeight:700, letterSpacing:'0.1em', fontFamily:'Switzer,sans-serif', display:'flex', alignItems:'center', gap:6, marginLeft:'auto', marginBottom:6, opacity:0.8, transition:'opacity 0.2s', padding:0 }}
+            onMouseEnter={e => e.currentTarget.style.opacity='1'}
+            onMouseLeave={e => e.currentTarget.style.opacity='0.8'}>
             BACK TO TOP ∧
           </button>
-          <div className="flex gap-4 justify-end">
+          <div style={{ display:'flex', gap:16, justifyContent:'flex-end' }}>
             {['COOKIES','IMPRINT & PRIVACY'].map(l => (
-              <a key={l} href="#" className="text-[11px] text-white/40 no-underline hover:text-white transition-colors" style={{fontFamily:'Switzer,sans-serif'}}>{l}</a>
+              <a key={l} href="#"
+                style={{ fontSize:11, color:'rgba(255,255,255,0.4)', textDecoration:'none', fontFamily:'Switzer,sans-serif', transition:'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color='#fff'}
+                onMouseLeave={e => e.currentTarget.style.color='rgba(255,255,255,0.4)'}>
+                {l}
+              </a>
             ))}
           </div>
         </div>

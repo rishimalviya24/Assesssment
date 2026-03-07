@@ -1,19 +1,32 @@
-import { useState } from 'react';
 export default function PortfolioCard({ item }) {
-  const [hov, setHov] = useState(false);
   return (
-    <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
-      <div className="flex justify-between items-center py-3">
-        <span className="text-[10px] font-bold tracking-[0.14em] text-white/55">{item.cat}</span>
-        <span className="text-[10px] text-white/40" style={{fontFamily:'Switzer,sans-serif'}}>{item.year}</span>
+    <div style={{ width:'100%' }}>
+      {/* Meta row */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:10, paddingTop:4 }}>
+        <span style={{ fontSize:10, fontWeight:700, letterSpacing:'0.08em', color:'rgba(255,255,255,0.5)', fontFamily:'Switzer,sans-serif', textTransform:'uppercase' }}>
+          {item.cat}
+        </span>
+        <span style={{ fontSize:10, color:'rgba(255,255,255,0.35)', fontFamily:'Switzer,sans-serif' }}>
+          {item.year}
+        </span>
       </div>
-      <div className="w-full relative overflow-hidden bg-[#111]" style={{paddingBottom:'76%'}}>
-        <img src={item.img} alt={item.title} loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover block"
-          style={{ transition:'transform .45s ease, filter .3s', transform:hov?'scale(1.04)':'scale(1)', filter:hov?'brightness(1.1)':'brightness(0.85)' }}
-          onError={e => { e.target.style.display='none'; }} />
+
+      {/* Image */}
+      <div style={{ width:'100%', aspectRatio:'4/3', overflow:'hidden', background:'#111', marginBottom:10 }}>
+        <img
+          src={item.img}
+          alt={item.title}
+          loading="lazy"
+          style={{ width:'100%', height:'100%', objectFit:'cover', display:'block', transition:'transform 0.4s ease' }}
+          onMouseEnter={e => e.currentTarget.style.transform='scale(1.04)'}
+          onMouseLeave={e => e.currentTarget.style.transform='scale(1)'}
+        />
       </div>
-      <div className="pt-2.5 pb-1 text-[11px] sm:text-[12px] font-bold tracking-[0.04em] text-white/88">{item.title}</div>
+
+      {/* Title */}
+      <div style={{ fontSize:12, fontWeight:700, letterSpacing:'0.04em', color:'#fff', fontFamily:'Switzer,sans-serif', textTransform:'uppercase' }}>
+        {item.title}
+      </div>
     </div>
   );
 }

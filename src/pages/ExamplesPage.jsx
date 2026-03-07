@@ -1,27 +1,46 @@
+import { Link } from 'react-router-dom';
 import PortfolioCard from '../components/PortfolioCard';
 import { PORTFOLIO } from '../data/constants';
 
 export default function ExamplesPage() {
   return (
-    <section id="examples" className="bg-black pb-12 sm:pb-16">
-      <div className="flex justify-between items-start px-5 sm:px-7 pt-9 pb-5 border-b border-[#1a1a1a]">
-        <h2 className="text-[clamp(40px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white m-0">EXAMPLES</h2>
-        <span className="text-[clamp(40px,7vw,84px)] font-black tracking-[-0.02em] leading-none text-white">S-8</span>
+    <section id="examples" style={{ background:'#000', paddingBottom:120 }}>
+
+      {/* Header */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', padding:'36px 28px 20px', borderBottom:'1px solid #1a1a1a' }}>
+        <h2 style={{ fontSize:'clamp(36px,7vw,84px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', margin:0, fontFamily:'Switzer,sans-serif' }}>
+          Examples
+        </h2>
+        <span style={{ fontSize:'clamp(36px,7vw,84px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1, color:'#fff', fontFamily:'Switzer,sans-serif', flexShrink:0 }}>
+          S-8
+        </span>
       </div>
-      <p className="text-[14px] text-white/60 px-5 sm:px-7 mt-5 mb-7" style={{fontFamily:'Switzer,sans-serif'}}>
+
+      <p style={{ fontSize:14, color:'rgba(255,255,255,0.6)', padding:'20px 28px', margin:0, fontFamily:'Switzer,sans-serif' }}>
         Here are 8 highlights from my work:
       </p>
+
+      {/* Portfolio grid */}
       <div className="portfolio-grid">
         {PORTFOLIO.map((item, i) => (
-          <div key={i} className="portfolio-cell px-3 sm:px-4 pb-4 sm:pb-5">
+          <div key={i} className="portfolio-cell" style={{ padding:'12px 16px 16px' }}>
             <PortfolioCard item={item} />
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap items-center gap-4 sm:gap-7 px-5 sm:px-7 pt-8 sm:pt-9">
-        <span className="text-[12px] sm:text-[13px] font-black tracking-[0.06em] text-white">CHECK OUR FULL PORTFOLIO:</span>
-        {['GRAPHIC DESIGN','PHOTOGRAPHY','WEB DEVELOPMENT'].map((l,i) => (
-          <a key={i} href="#" className="text-[12px] sm:text-[13px] font-bold tracking-[0.05em] text-white underline underline-offset-[3px] italic opacity-80 hover:opacity-100 transition-opacity" style={{fontFamily:'Switzer,sans-serif'}}>{l}</a>
+
+      {/* Footer links */}
+      <div style={{ display:'flex', flexWrap:'wrap', alignItems:'center', gap:'16px 28px', padding:'32px 28px 0' }}>
+        <span style={{ fontSize:12, fontWeight:900, letterSpacing:'0.06em', color:'#fff', fontFamily:'Switzer,sans-serif' }}>
+          CHECK OUR FULL PORTFOLIO:
+        </span>
+        {[['GRAPHIC DESIGN','/design'],['PHOTOGRAPHY','/photography'],['WEB DEVELOPMENT','/web']].map(([l,path]) => (
+          <Link key={l} to={path}
+            style={{ fontSize:12, fontWeight:600, letterSpacing:'0.04em', color:'#fff', textDecoration:'underline', textUnderlineOffset:3, fontStyle:'italic', opacity:0.8, fontFamily:'Switzer,sans-serif', transition:'opacity 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.opacity='1'}
+            onMouseLeave={e => e.currentTarget.style.opacity='0.8'}>
+            {l}
+          </Link>
         ))}
       </div>
     </section>
