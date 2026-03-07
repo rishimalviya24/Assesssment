@@ -115,8 +115,8 @@ export default function DesignPage() {
   }, [activeTag, baseDesignProjects, designSort]);
 
   return (
-    <div className="w-full min-h-screen bg-black text-white px-5 md:px-8 xl:px-16 pt-[52px]">
-      <section id="design-portfolio" className="py-32 md:py-[20vh]">
+    <div className="w-full bg-black text-white px-5 md:px-8 xl:px-16 pt-[52px] overflow-hidden">
+      <section id="design-portfolio" className="pt-32 md:pt-[20vh]">
         <div className="mx-auto max-w-6xl px-2 md:px-8">
           <h2 className="text-3xl md:text-5xl font-[600] uppercase mb-2">DESIGN PORTFOLIO</h2>
           <p className="text-sm mb-32">* selected work</p>
